@@ -107,7 +107,7 @@ There are two methods to get Postgres running locally.
     - The default username is **`postgres`** and corresponds to **`$POSTGRES_USER`** in your **`.env`**.
     - The default password is **`postgres`** and corresponds to **`$POSTGRES_PASSWORD`** in your **`.env`**.
     - The default database is **`postgres`** and corresponds to **`$POSTGRES_DB`** in your **`.env`**.
-    - The default host is **`localhost`** or **`0.0.0.0`.** This is the IP address of the Docker container running the PostgreSQL instance.
+    - The default host is **`host.docker.internal`**, **`localhost`** or **`0.0.0.0`.** This is the IP address of the Docker container running the PostgreSQL instance.
     - The default port for Postgres is **`5432` .** This corresponds to the **`$CONTAINER_PORT`** variable in the **`.env`** file.
     
     &rarr; :bulb: You can edit these values by modifying the corresponding values in **`.env`**.
