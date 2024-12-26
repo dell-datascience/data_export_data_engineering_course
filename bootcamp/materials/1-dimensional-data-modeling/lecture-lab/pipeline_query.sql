@@ -1,14 +1,13 @@
 WITH last_season AS (
     SELECT * FROM players
     WHERE current_season = 1997
-
 ), this_season AS (
      SELECT * FROM player_seasons
     WHERE season = 1998
 )
 INSERT INTO players
 SELECT
-        COALESCE(ls.player_name, ts.player_name) as player_name,
+        COALESCE(ls.player_name, ts.player_name) as p layer_name,
         COALESCE(ls.height, ts.height) as height,
         COALESCE(ls.college, ts.college) as college,
         COALESCE(ls.country, ts.country) as country,
@@ -36,7 +35,6 @@ SELECT
          END as scoring_class,
          ts.season IS NOT NULL as is_active,
          1998 AS current_season
-
     FROM last_season ls
     FULL OUTER JOIN this_season ts
     ON ls.player_name = ts.player_name
